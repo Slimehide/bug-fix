@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IG 스튜디오 - 파도 애니메이션</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script
+    type="module"
+    src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs">
+  </script>
+</head>
+
+<body class="home">
+  <header>
+    <div class="container">
+      <nav class="nav home">
+        <div class="nav-top">
+          <div class="nav-left">
+            <a href="index.html">
+              <img src="images/Logo.png" alt="아일랜드 게임 스튜디오 로고" class="logo-image" />
+            </a>
+          </div>
+
+          <button type="button" class="menu-toggler">
+            <span></span><span></span>
+          </button>
+        </div>
+
+        <div class="nav-center">
+          <div class="nav-links">
+            <a href="about.html">회사 소개</a>
+            <a href="press.html">언론</a>
+            <a href="creators.html">콘텐츠 크리에이터</a>
+            <a href="contact.html">문의</a>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <button class="lang-toggle" type="button" data-lang="ko">
+            <img src="images/Flag_Korea.svg" alt="한국 국기" class="lang-flag-img" />
+            <span class="lang-code">Korean</span>
+            <span class="lang-caret">▾</span>
+          </button>
+
+         <ul class="lang-menu">
+  <li>
+    <a href="/english/index.html" data-lang="en">
+      <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+      English
+    </a>
+  </li>
+  <li>
+    <a href="/chinese/index.html" data-lang="zh">
+      <img src="images/Flag_China.png" alt="Chinese Flag" class="lang-flag-img" />
+      中文
+    </a>
+  </li>
+  <li>
+    <a href="/japanese/index.html" data-lang="ja">
+      <img src="images/Flag_Japan.png" alt="Japanese Flag" class="lang-flag-img" />
+      日本語
+    </a>
+  </li>
+  <li>
+    <a href="/korean/index.html" data-lang="ko">
+      <img src="images/Flag_Korea.svg" alt="South Korean Flag" class="lang-flag-img" />
+      한국어
+    </a>
+  </li>
+</ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section_home-hero">
+      <div class="container">
+        <div class="home-hero_content">
+          <h1>편안하게<br>즐기세요</h1>
+          <p>
+            우리는 보기에도 좋고 플레이하기도 재미있는 게임을 만듭니다.
+            플레이어가 오래 머물고 싶어지는 생동감 있고 매력적인 세계를 만드는 것이 우리의 목표입니다.
+            우리 게임은 탐험, 전략, 그리고 반복 플레이의 재미를 중심으로 설계됩니다.
+          </p>
+          <a class="button ib" href="#featured">게임 보기</a>
+        </div>
+      </div>
+      <div class="home-hero_trees-container">
+        <div class="tree-img_wrap is-1">
+          <img class="tree-img" src="images/tree-green.svg" alt="">
+        </div>
+        <div class="tree-img_wrap is-2">
+          <img class="tree-img" src="images/tree-green.svg" alt="">
+        </div>
+        <div class="tree-img_wrap is-3">
+          <img class="tree-img" src="images/tree-green.svg" alt="">
+        </div>
+      </div>
+      <div class="waves-container">
+        <img class="wave-img is-back" src="images/wave-grey.svg" alt="">
+        <img class="wave-img" src="images/wave-orange.svg" alt="">
+      </div>
+    </section>
+
+    <section class="section_orange" id="featured">
+      <div class="container">
+        <div class="featured-inner">
+          <div class="featured-header">
+            <h2>추천 게임</h2>
+          </div>
+
+          <div class="game-grid">
+            <article class="game-card">
+              <div class="game-thumb-dark-dive"></div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span>턴제</span>
+                  <span>개발 중</span>
+                </div>
+                <div class="game-title">ダークダイブ</div>
+                <p class="game-desc">
+                  모든 주문이 승부이고, 모든 턴이 변화하는 2x3 그리드 위의 퍼즐이 되는 턴제 로그라이트입니다.
+                </p>
+                <div class="game-actions">
+                  <a class="btn-outline" href="#">게임 보기</a>
+                  <a class="btn-solid" href="#">프레스 키트</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="game-card">
+              <div class="game-thumb"></div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span>미정</span>
+                  <span>미공개</span>
+                </div>
+                <div class="game-title">미정</div>
+                <p class="game-desc">곧 공개될 이 작품의 추가 소식을 기대해 주세요.</p>
+                <div class="game-actions">
+                  <a class="btn-outline" href="#">게임 보기</a>
+                  <a class="btn-solid" href="#">프레스 키트</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="game-card">
+              <div class="game-thumb"></div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span>미정</span>
+                  <span>미공개</span>
+                </div>
+                <div class="game-title">미정</div>
+                <p class="game-desc">곧 공개될 이 작품의 추가 소식을 기대해 주세요.</p>
+                <div class="game-actions">
+                  <a class="btn-outline" href="#">게임 보기</a>
+                  <a class="btn-solid" href="#">프레스 키트</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="waves-container is-inverted">
+      <img class="wave-img is-back" src="images/wave-grey.svg" alt="">
+      <img class="wave-img" src="images/wave-orange.svg" alt="">
+    </div>
+
+    <section class="section_white">
+      <div class="container">
+        <div class="card-wrap first">
+          <h2 class="h3">플레이테스트</h2>
+          <p>플레이 테스트 커뮤니티에 참여하고, 초기 빌드와 독점 코멘터리, 개발 소식을 받아보세요.</p>
+          <button class="button" type="button">접근하기</button>
+          <img class="tree-img" src="images/tree-green.svg" alt="">
+        </div>
+
+        <div class="card-wrap last">
+          <h2 class="h3">키 요청</h2>
+          <p>스트리밍이나 영상 제작 계획이신가요? 요청하시면 준비되는 대로 키를 보내드립니다.</p>
+          <button class="button" type="button">키 요청</button>
+          <img class="tree-img" src="images/tree-green.svg" alt="">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="waves-container footer-divider">
+    <div class="container">
+      <div class="tree-img_wrap">
+        <img class="tree-img" src="images/tree-green.svg" alt="">
+      </div>
+      <div class="tree-img_wrap is-reversed">
+        <img class="tree-img" src="images/tree-green.svg" alt="">
+      </div>
+    </div>
+    <img class="section-divider" src="images/wave-green.svg" alt="">
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">
+        <img src="images/footer-logo-2.png" alt="아일랜드 게임 스튜디오 로고" class="footer-logo">
+      </a>
+      <div class="footer-contact">
+        아일랜드 게임 스튜디오는 사람들에게 즐거움을 주는 게임을 만드는 데 열정을 가진 곳입니다.
+      </div>
+      <div class="footer-social-links">
+        <a href="#">
+          <img src="images/Steam_icon_logo.png" alt="Steam 아이콘">
+        </a>
+      </div>
+      <div class="footer-nav">
+        <a href="about.html">회사 소개</a>
+        <a href="press.html">언론</a>
+        <a href="creators.html">콘텐츠 크리에이터</a>
+        <a href="contact.html">문의</a>
+      </div>
+    </div>
+  </footer>
+
+  <form
+    class="contact-form-simple absolute ajax-form"
+    id="signup-form"
+    name="signup-form"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    action="/"
+  >
+    <div class="form-header">
+      <h6>회원가입</h6>
+      <span id="close-s-form" role="button" tabindex="0" aria-label="양식 닫기">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </span>
+    </div>
+
+    <input type="hidden" name="form-name" value="signup-form" />
+
+    <div style="display:none;">
+      <label>이 필드는 비워 두세요:
+        <input type="text" name="bot-field" />
+      </label>
+    </div>
+
+    <div class="form-body">
+      <p class="field">
+        <label for="press-name">이름</label>
+        <input id="press-name" type="text" name="name" required>
+      </p>
+
+      <p class="field">
+        <label for="press-email">이메일</label>
+        <input id="press-email" type="email" name="email" required>
+      </p>
+
+      <button type="submit" class="button submit-btn">
+        <span class="btn-text">회원가입</span>
+      </button>
+
+      <div class="form-error" aria-live="polite"></div>
+    </div>
+
+    <div class="success-state index" aria-live="polite">
+      <div class="success-icon">
+        <dotlottie-player
+          id="successAnim"
+          src="/images/Check Mark - Success.lottie"
+          background="transparent"
+          speed="1"
+        >
+        </dotlottie-player>
+      </div>
+      <p>전송 완료.</p>
+    </div>
+  </form>
+
+  <script>
+    function resetFormUI(form) {
+      if (!form) return;
+
+      const submitBtn = form.querySelector(".submit-btn");
+      const btnText = form.querySelector(".btn-text");
+      const errorEl = form.querySelector(".form-error");
+
+      form.classList.remove("is-submitted");
+      form.reset();
+
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnText) btnText.textContent = "회원가입";
+
+      if (errorEl) {
+        errorEl.textContent = "";
+        errorEl.classList.remove("is-visible");
+      }
+    }
+  </script>
+  <script>
+    const _ = e => document.querySelector(e);
+    const __ = e => document.querySelectorAll(e);
+
+    function encode(data) {
+      return Object.keys(data)
+        .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+    }
+
+    function wireAjaxForm(form) {
+      if (!form) return;
+
+      const submitBtn = form.querySelector(".submit-btn");
+      const btnText = form.querySelector(".btn-text");
+      const errorEl = form.querySelector(".form-error");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        if (errorEl) {
+          errorEl.textContent = "";
+          errorEl.classList.remove("is-visible");
+        }
+
+        if (submitBtn) submitBtn.disabled = true;
+        if (btnText) btnText.textContent = "전송 중...";
+
+        try {
+          const formData = new FormData(form);
+          const data = {};
+
+          formData.forEach((value, key) => {
+            data[key] = value;
+          });
+
+          if (!data["form-name"] && form.getAttribute("name")) {
+            data["form-name"] = form.getAttribute("name");
+          }
+
+          await fetch(form.getAttribute("action") || "/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode(data),
+          });
+
+          form.reset();
+          form.classList.add("is-submitted");
+          const anim = form.querySelector("#successAnim");
+
+          requestAnimationFrame(() => {
+            if (anim) {
+              anim.stop();
+              anim.seek(0);
+              anim.play();
+            }
+          });
+        } catch (err) {
+          console.error(err);
+
+          if (errorEl) {
+            errorEl.textContent = "문제가 발생했습니다. 다시 시도해 주세요.";
+            errorEl.classList.add("is-visible");
+          }
+
+          if (submitBtn) submitBtn.disabled = false;
+          if (btnText) btnText.textContent = "회원가입";
+        }
+      });
+    }
+
+    wireAjaxForm(document.getElementById("signup-form"));
+
+    _('.menu-toggler').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+
+    const l = _('.lang-toggle'), m = _('.lang-menu');
+    if (l && m) {
+      const c = l.dataset.lang;
+      m.querySelectorAll('a[data-lang]').forEach(a => {
+        if (a.dataset.lang === c) a.parentElement.style.display = 'none';
+      });
+      l.addEventListener('click', e => {
+        e.stopPropagation();
+        m.classList.toggle('is-open');
+      });
+      document.addEventListener('click', () => m.classList.remove('is-open'));
+    }
+
+    Array.from(__('[href="#featured"]')).forEach(btn =>
+      btn.addEventListener("click", (e) => (
+        e.preventDefault(),
+        _("#featured").scrollIntoView({ behavior: "smooth" })
+      ))
+    );
+  </script>
+  <script>
+    const formEl = _("#signup-form");
+
+    __(".card-wrap button").forEach(btn =>
+      btn.addEventListener("click", () => {
+        resetFormUI(formEl);
+        formEl.classList.add("is-open");
+      })
+    );
+
+    _("#close-s-form").addEventListener("click", () => {
+      formEl.classList.remove("is-open");
+    });
+  </script>
+</body>
+</html>

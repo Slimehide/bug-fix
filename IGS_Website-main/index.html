@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Island Game Studio - Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header>
+        <nav class="nav">
+          <div class="nav-left">
+            <a href="index.html">
+              <img
+                src="images/Logo.png"
+                alt="Island Game Studio Logo"
+                class="logo-image"
+              />
+            </a>
+          </div>
+
+        <div class="nav-center">
+          <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="press.html">Press</a>
+            <a href="creators.html">Creators</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <!-- Language selector -->
+          <div class="nav-right">
+            <!-- Toggle button -->
+            <button class="lang-toggle" type="button" data-lang="en">
+              <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+              <span class="lang-code">EN</span>
+              <span class="lang-caret">▾</span>
+            </button>
+          
+              <!-- Dropdown menu -->
+              <ul class="lang-menu">
+                <li>
+                  <a href="/english/index.html" data-lang="en">
+                    <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+                    English
+                  </a>
+                </li>
+                <li>
+                  <a href="/chinese/index.html" data-lang="zh">
+                    <img src="images/Flag_China.png" alt="Chinese Flag" class="lang-flag-img" />
+                    Chinese
+                  </a>
+                </li>
+                <li>
+                  <a href="/japanese/index.html" data-lang="ja">
+                    <img src="images/Flag_Japan.png" alt="Japanese Flag" class="lang-flag-img" />
+                    Japanese
+                  </a>
+                </li>
+                <li>
+                  <a href="/korean/index.html" data-lang="ko">
+                    <img src="images/Flag_Korea.svg" alt="South Korean Flag" class="lang-flag-img" />
+                    Korean
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <!-- HERO -->
+        <section class="hero">
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <h1>Never Stop Having <br />Fun</h1>
+              <p>
+                We are a video game studio with Caribbean roots. We 
+                share culture through memorable experiences that entertain 
+                and ignite joy.
+              </p>
+              <button class="hero-primary-btn">See Our Games</button>
+            </div>
+          </div>
+          <div class="hero-wave-top--orange"></div>
+          <div class="hero-wave-top--grey"></div>
+        </section>
+
+        <!-- FEATURED GAMES -->
+        <section class="featured" id="games">
+          <div class="featured-inner">
+            <div class="featured-header">
+              <h2>Featured Games</h2>
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <button class="view-all">View all titles</button>
+                <div class="slider-arrows">
+                  <div class="slider-arrow">&#8592;</div>
+                  <div class="slider-arrow">&#8594;</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-grid">
+              <!-- Game card 1 -->
+              <article class="game-card">
+                <div class="game-thumb"></div>
+                <div class="game-body">
+                  <div class="game-meta">
+                    <span>Turn-Based</span>
+                    <span>In Development</span>
+                  </div>
+                  <div class="game-title">Dark Dive</div>
+                  <p class="game-desc">
+                    A turn based roguelite where every spell is a gamble
+                    and every turn is a puzzle on a shifting 2x3 grid.
+                  </p>
+                  <div class="game-actions">
+                    <a class="btn-outline" href="#">View game</a>
+                    <a class="btn-solid" href="#">Press kit</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Game card 2 -->
+              <article class="game-card">
+                <div class="game-thumb"></div>
+                <div class="game-body">
+                  <div class="game-meta">
+                    <span>TBA</span>
+                    <span>Unannounced</span>
+                  </div>
+                  <div class="game-title">To Be Announced</div>
+                  <p class="game-desc">
+                    Stay tuned for more updates on this upcoming title.
+                  </p>
+                  <div class="game-actions">
+                    <a class="btn-outline" href="#">View game</a>
+                    <a class="btn-solid" href="#">Press kit</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Game card 3 -->
+              <article class="game-card">
+                <div class="game-thumb"></div>
+                <div class="game-body">
+                  <div class="game-meta">
+                    <span>TBA</span>
+                    <span>Unannounced</span>
+                  </div>
+                  <div class="game-title">To Be Announced</div>
+                  <p class="game-desc">
+                    Stay tuned for more updates on this upcoming title.
+                  </p>
+                  <div class="game-actions">
+                    <a class="btn-outline" href="#">View game</a>
+                    <a class="btn-solid" href="#">Press kit</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="featured-wave-bottom--orange"></div>
+          <div class="featured-wave-bottom--grey"></div>
+        </section>
+
+        <!-- LATEST NEWS (home) -->
+        <section class="home-latest-news">
+          <div class="home-latest-copy">
+            <h2>Latest News</h2>
+            <p class="home-latest-tagline">
+              Updates on demos, trailers, and announcements from Island Game Studio.
+            </p>
+            <a href="/news/" class="see-all-news">View all releases</a>
+          </div>
+        
+          <!-- Right column – news list that JS fills -->
+          <div id="latest-news" class="home-latest-list"></div>
+        </section>
+        
+        <script>
+          // Fetch the news page and pull in the first few posts
+          fetch('/news/index.html')
+            .then(response => response.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+
+              // Grab all news items from the news page
+              const articles = doc.querySelectorAll('.news-item');
+              const latestContainer = document.getElementById('latest-news');
+
+              // Show up to 3 latest posts
+              const maxPosts = 3;
+              for (let i = 0; i < Math.min(maxPosts, articles.length); i++) {
+                const clone = articles[i].cloneNode(true);
+                latestContainer.appendChild(clone);
+              }
+            })
+            .catch(err => {
+              console.error('Failed to load latest news', err);
+              const latestContainer = document.getElementById('latest-news');
+              if (latestContainer) {
+                latestContainer.textContent = 'Check the News page for updates.';
+              }
+            });
+        </script>
+
+
+        <!-- CREATOR PROGRAM / KEYS -->
+        <section class="section" id="creators">
+          <div class="creator-keys-wrap">
+            <div class="creator-block">
+              <h3>Play Test Program</h3>
+              <p>
+                Join our playtesting community to receive early builds,
+                exclusive commentary, and development updates.
+              </p>
+              <button>Learn more</button>
+            </div>
+
+            <div class="keys-block">
+              <h3>Request Keys</h3>
+              <p>
+                Streaming our games or planning a video? Request access and
+                we'll send keys once playtest builds are ready.
+              </p>
+              <button>Request keys</button>
+            </div>
+          </div>
+          <div class="wave-bottom--blue"></div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer id="contact">
+        <div class="footer-inner">
+          <a href="index.html">
+              <img
+                src="images/footer-logo.png"
+                alt="Island Game Studio Logo"
+                class="footer-logo"
+          />
+          <div class="footer-contact">
+            Press kits and game art assets are available on our Press page.
+          </div>
+
+          <div class="footer-social">
+            <a href="#">Steam</a>
+            <span>·</span>
+            <a href="#">YouTube</a>
+            <span>·</span>
+            <a href="#">Discord</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const langToggle = document.querySelector('.lang-toggle');
+      const langMenu = document.querySelector('.lang-menu');
+
+      if (langToggle && langMenu) {
+        const currentLang = langToggle.dataset.lang;
+
+        // hide current language from dropdown
+        langMenu.querySelectorAll('a[data-lang]').forEach(a => {
+          if (a.dataset.lang === currentLang) {
+            a.parentElement.style.display = 'none';
+          }
+        });
+
+        langToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          langMenu.classList.toggle('is-open');
+        });
+
+        document.addEventListener('click', function () {
+          langMenu.classList.remove('is-open');
+        });
+      }
+    </script>
+  </body>
+</html>

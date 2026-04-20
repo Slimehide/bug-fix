@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>媒体 - 岛屿游戏工作室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header>
+        <div class="container">
+          <nav class="nav home">
+            <div class="nav-top">
+              <div class="nav-left">
+                <a href="index.html">
+                  <img src="images/Logo.png" alt="岛屿游戏工作室标志" class="logo-image" />
+                </a>
+              </div>
+
+              <button type="button" class="menu-toggler">
+                <span></span><span></span>
+              </button>
+            </div>
+
+            <div class="nav-center">
+              <div class="nav-links">
+                <a href="about.html">关于我们</a>
+                <a href="press.html">媒体</a>
+                <a href="creators.html">内容创作者</a>
+                <a href="contact.html">联系</a>
+              </div>
+            </div>
+
+            <div class="nav-right">
+              <button class="lang-toggle" type="button" data-lang="zh">
+                <img src="images/Flag_China.png" alt="中国国旗" class="lang-flag-img" />
+                <span class="lang-code">Chinese</span>
+                <span class="lang-caret">▾</span>
+              </button>
+
+           <ul class="lang-menu">
+  <li>
+    <a href="/english/press.html" data-lang="en">
+      <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+      English
+    </a>
+  </li>
+  <li>
+    <a href="/chinese/press.html" data-lang="zh">
+      <img src="images/Flag_China.png" alt="Chinese Flag" class="lang-flag-img" />
+      中文
+    </a>
+  </li>
+  <li>
+    <a href="/japanese/press.html" data-lang="ja">
+      <img src="images/Flag_Japan.png" alt="Japanese Flag" class="lang-flag-img" />
+      日本語
+    </a>
+  </li>
+  <li>
+    <a href="/korean/press.html" data-lang="ko">
+      <img src="images/Flag_Korea.svg" alt="South Korean Flag" class="lang-flag-img" />
+      한국어
+    </a>
+  </li>
+</ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="subpage-main">
+        <div class="press-copy">
+          <h1>媒体中心</h1>
+          <p>
+            我们的工作室介绍、具体游戏素材和游戏信息，可在下方的工作室信息中心查看。
+            如需申请媒体密钥或采访，请使用本页的联系表单。
+            我们会尽快回复，也很乐意提供关于我们游戏或工作室的更多信息。
+          </p>
+        </div>
+
+        <section class="press-hub">
+          <div class="hub-intro">
+            <h1>工作室信息中心</h1>
+            <p>
+              这里提供每款游戏的媒体资料包、预告片，以及 MIX 或节庆页面的快速链接。
+              可用于报道、预览和文章撰写。
+            </p>
+          </div>
+
+          <div class="game-link-list">
+            <div class="game-link-row">
+              <div class="game-link-title">Dark Dive</div>
+              <div class="game-link-actions">
+                <a class="hub-pill" href="#">媒体资料包</a>
+                <a class="hub-pill" href="#">Steam 页面</a>
+              </div>
+            </div>
+
+            <div class="game-link-row">
+              <div class="game-link-title">岛屿游戏工作室</div>
+              <div class="game-link-actions">
+                <a class="hub-pill" href="#">资料包</a>
+                <a class="hub-pill" href="#">开发者页面</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer base">
+        <div class="footer-inner">
+          <a href="index.html" class="footer-logo">
+            <img
+              src="images/footer-logo-2.png"
+              alt="岛屿游戏工作室标志"
+              class="footer-logo"
+            />
+          </a>
+          <div class="footer-contact">
+            岛屿游戏工作室是一家小型独立游戏工作室，热衷于打造能带来快乐的作品。
+          </div>
+          <div class="footer-social-links">
+            <a href="#">
+              <img src="images/Steam_icon_logo.png" alt="Steam 图标">
+            </a>
+          </div>
+          <div class="footer-nav">
+            <a href="about.html">关于我们</a>
+            <a href="press.html">媒体</a>
+            <a href="creators.html">内容创作者</a>
+            <a href="contact.html">联系</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const langToggle = document.querySelector('.lang-toggle');
+      const langMenu = document.querySelector('.lang-menu');
+
+      if (langToggle && langMenu) {
+        const currentLang = langToggle.dataset.lang;
+
+        langMenu.querySelectorAll('a[data-lang]').forEach(a => {
+          if (a.dataset.lang === currentLang) {
+            a.parentElement.style.display = 'none';
+          }
+        });
+
+        langToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          langMenu.classList.toggle('is-open');
+        });
+
+        document.addEventListener('click', function () {
+          langMenu.classList.remove('is-open');
+        });
+      }
+    </script>
+    <script>
+      const _ = e => document.querySelector(e), __ = e => document.querySelectorAll(e);
+      _('.menu-toggler').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+    </script>
+  </body>
+</html>

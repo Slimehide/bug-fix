@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문의 - 아일랜드 게임 스튜디오</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+    ></script>
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header>
+        <div class="container">
+          <nav class="nav home">
+            <div class="nav-top">
+              <div class="nav-left">
+                <a href="index.html">
+                  <img src="images/Logo.png" alt="아일랜드 게임 스튜디오 로고" class="logo-image" />
+                </a>
+              </div>
+
+              <button type="button" class="menu-toggler">
+                <span></span><span></span>
+              </button>
+            </div>
+
+            <div class="nav-center">
+              <div class="nav-links">
+                <a href="about.html">회사 소개</a>
+                <a href="press.html">언론</a>
+                <a href="creators.html">콘텐츠 크리에이터</a>
+                <a href="contact.html">문의</a>
+              </div>
+            </div>
+
+            <div class="nav-right">
+              <button class="lang-toggle" type="button" data-lang="ko">
+                <img src="images/Flag_Korea.svg" alt="한국 국기" class="lang-flag-img" />
+                <span class="lang-code">Korean</span>
+                <span class="lang-caret">▾</span>
+              </button>
+
+         <ul class="lang-menu">
+  <li>
+    <a href="/english/contact.html" data-lang="en">
+      <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+      English
+    </a>
+  </li>
+  <li>
+    <a href="/chinese/contact.html" data-lang="zh">
+      <img src="images/Flag_China.png" alt="Chinese Flag" class="lang-flag-img" />
+      中文
+    </a>
+  </li>
+  <li>
+    <a href="/japanese/contact.html" data-lang="ja">
+      <img src="images/Flag_Japan.png" alt="Japanese Flag" class="lang-flag-img" />
+      日本語
+    </a>
+  </li>
+  <li>
+    <a href="/korean/contact.html" data-lang="ko">
+      <img src="images/Flag_Korea.svg" alt="South Korean Flag" class="lang-flag-img" />
+      한국어
+    </a>
+  </li>
+</ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="subpage-main">
+        <section class="contact-panel">
+          <h1>문의</h1>
+          <p>
+            질문, 의견, 문의 사항이 있으시면 아래 양식을 이용해 주세요.
+            언론 관계자와 콘텐츠 크리에이터는 처음 연락하실 때 구체적인 요청 사항을 함께 적어 주세요.
+            이렇게 하면 문의 내용을 더 잘 정리할 수 있고, 적절한 담당자가 메시지를 확인할 수 있습니다.
+            질문, 의견, 문의 사항이 있으시면 아래 양식을 이용해 주세요.
+          </p>
+
+          <div class="form-wrap">
+            <form
+              id="contactForm"
+              class="contact-form-simple"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="empty-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+
+              <div style="display:none;">
+                <input name="empty-field" />
+              </div>
+
+              <div class="field">
+                <label>이름</label>
+                <input name="name" required />
+              </div>
+
+              <div class="field">
+                <label>이메일</label>
+                <input name="email" type="email" required />
+              </div>
+
+              <div class="field">
+                <label>제목</label>
+                <input name="subject" />
+              </div>
+
+              <div class="field">
+                <label>메시지</label>
+                <textarea name="message" required></textarea>
+              </div>
+
+              <button class="button" id="submitBtn" type="submit">
+                <span class="btn-text">메시지 보내기</span>
+              </button>
+              <div id="formError" class="form-error" aria-live="polite"></div>
+            </form>
+
+            <div id="successState" class="success-state contact" aria-live="polite">
+              <div class="success-icon">
+                <dotlottie-player
+                  id="contactSuccessAnim"
+                  src="/images/Check Mark - Success.lottie"
+                  background="transparent"
+                  speed="1"
+                ></dotlottie-player>
+              </div>
+              <p class="m-0">전송 완료.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer base">
+        <div class="footer-inner">
+          <a href="index.html" class="footer-logo">
+            <img src="images/footer-logo-2.png" alt="아일랜드 게임 스튜디오 로고" class="footer-logo" />
+          </a>
+          <div class="footer-contact">
+            아일랜드 게임 스튜디오는 즐거움을 전하는 게임을 만드는 데 열정을 가진 소규모 인디 게임 스튜디오입니다.
+          </div>
+          <div class="footer-social-links">
+            <a href="#">
+              <img src="images/Steam_icon_logo.png" alt="Steam 아이콘">
+            </a>
+          </div>
+          <div class="footer-nav">
+            <a href="about.html">회사 소개</a>
+            <a href="press.html">언론</a>
+            <a href="creators.html">콘텐츠 크리에이터</a>
+            <a href="contact.html">문의</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const langToggle = document.querySelector('.lang-toggle');
+      const langMenu = document.querySelector('.lang-menu');
+
+      if (langToggle && langMenu) {
+        const currentLang = langToggle.dataset.lang;
+
+        langMenu.querySelectorAll('a[data-lang]').forEach(a => {
+          if (a.dataset.lang === currentLang) {
+            a.parentElement.style.display = 'none';
+          }
+        });
+
+        langToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          langMenu.classList.toggle('is-open');
+        });
+
+        document.addEventListener('click', function () {
+          langMenu.classList.remove('is-open');
+        });
+      }
+
+      const _ = e => document.querySelector(e), __ = e => document.querySelectorAll(e);
+      _('.menu-toggler').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+    </script>
+
+    <script>
+      function encode(data) {
+        return Object.keys(data)
+          .map(
+            (key) =>
+              encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+          )
+          .join("&");
+      }
+
+      function wireAjaxForm(formId, submitBtnId, successStateId, errorId, sendingText, defaultText) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+
+        const submitBtn = document.getElementById(submitBtnId);
+        const btnText = submitBtn ? submitBtn.querySelector(".btn-text") : null;
+        const successState = document.getElementById(successStateId);
+        const formError = document.getElementById(errorId);
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          if (formError) {
+            formError.textContent = "";
+            formError.classList.remove("is-visible");
+          }
+
+          if (submitBtn) submitBtn.disabled = true;
+          if (btnText) btnText.textContent = sendingText || "전송 중...";
+
+          try {
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+              data[key] = value;
+            });
+
+            const formName = form.getAttribute("name");
+            if (formName && !data["form-name"]) {
+              data["form-name"] = formName;
+            }
+
+            await fetch(form.getAttribute("action") || "/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: encode(data),
+            });
+
+            form.reset();
+            form.classList.add("is-hidden");
+            if (successState) successState.classList.add("is-visible");
+
+            const anim = successState.querySelector("dotlottie-player");
+
+            requestAnimationFrame(() => {
+              if (anim) {
+                anim.stop();
+                anim.seek(0);
+                anim.play();
+              }
+            });
+          } catch (error) {
+            console.error(error);
+
+            if (submitBtn) submitBtn.disabled = false;
+            if (btnText) btnText.textContent = defaultText || "메시지 보내기";
+
+            if (formError) {
+              formError.textContent = "문제가 발생했습니다. 다시 시도해 주세요.";
+              formError.classList.add("is-visible");
+            }
+          }
+        });
+      }
+
+      wireAjaxForm("contactForm", "submitBtn", "successState", "formError", "전송 중...", "메시지 보내기");
+      wireAjaxForm("signup-form", "signupSubmitBtn", "signupSuccessState", "signupFormError", "전송 중...", "회원가입");
+    </script>
+  </body>
+</html>

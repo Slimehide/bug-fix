@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact - Island Game Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <head>
+  <script
+    type="module"
+    src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+  ></script>
+</head>
+  </head>
+  <body>
+    <div class="page-wrap">
+     <header>
+    <div class="container">
+     <nav class="nav home">
+  <div class="nav-top">
+    <div class="nav-left">
+      <a href="index.html">
+        <img src="images/Logo.png" alt="Island Game Studio Logo" class="logo-image" />
+      </a>
+    </div>
+
+   
+
+    <button type="button" class="menu-toggler">
+      <span></span><span></span>
+    </button>
+    
+  </div>
+
+  <div class="nav-center">
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="press.html">Press</a>
+      <a href="creators.html">Content Creators</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  
+
+       <div class="nav-right">
+      <button class="lang-toggle" type="button" data-lang="en">
+        <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+        <span class="lang-code">EN</span>
+        <span class="lang-caret">▾</span>
+      </button>
+
+     <ul class="lang-menu">
+  <li>
+    <a href="/english/contact.html" data-lang="en">
+      <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+      English
+    </a>
+  </li>
+  <li>
+    <a href="/chinese/contact.html" data-lang="zh">
+      <img src="images/Flag_China.png" alt="Chinese Flag" class="lang-flag-img" />
+      中文
+    </a>
+  </li>
+  <li>
+    <a href="/japanese/contact.html" data-lang="ja">
+      <img src="images/Flag_Japan.png" alt="Japanese Flag" class="lang-flag-img" />
+      日本語
+    </a>
+  </li>
+  <li>
+    <a href="/korean/contact.html" data-lang="ko">
+      <img src="images/Flag_Korea.svg" alt="South Korean Flag" class="lang-flag-img" />
+      한국어
+    </a>
+  </li>
+</ul>
+    </div>
+    </div>
+    </nav>
+  </header>
+
+      <main class="subpage-main">
+        <section class="contact-panel">
+          <h1>Contact</h1>
+          <p>
+            For questions, comments and inquiries, please use the form below. 
+            Members of the press and content creators, please state your specific request in your initial reachout. 
+            This helps keep inquiries organized and makes sure that the right person sees your message.
+            For questions, comments and inquiries, please use the form below.
+          </p>
+
+          <!-- <form class="contact-form-simple" name="contact"
+            method="POST"
+            data-netlify="true" 
+            netlify-honeypot="empty-field"
+            >
+           
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div style="display: none;">
+              <label>Empty field:
+                <input type="text" name="empty-field" />
+              </label>
+            </div>
+
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="button">Send message</button>
+          </form> -->
+          <div class="form-wrap">
+          <form id="contactForm"
+  class="contact-form-simple"
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="empty-field"
+>
+  <input type="hidden" name="form-name" value="contact" />
+
+  <div style="display:none;">
+    <input name="empty-field" />
+  </div>
+
+  <div class="field">
+    <label>Name</label>
+    <input name="name" required />
+  </div>
+
+  <div class="field">
+    <label>Email</label>
+    <input name="email" type="email" required />
+  </div>
+
+  <div class="field">
+    <label>Subject</label>
+    <input name="subject" />
+  </div>
+
+  <div class="field">
+    <label>Message</label>
+    <textarea name="message" required></textarea>
+  </div>
+  <button class="button" id="submitBtn" type="submit">
+      <span class="btn-text">Send Message</span>
+    </button>
+    <div id="formError" class="form-error" aria-live="polite"></div>
+  <!-- <button type="submit" class="button btn-text">Send message</button> -->
+</form>
+ <div id="successState" class="success-state contact" aria-live="polite">
+    <div class="success-icon">
+      <dotlottie-player
+        id="contactSuccessAnim"
+        src="/images/Check Mark - Success.lottie"
+        background="transparent"
+        speed="1"
+        
+        >
+      </dotlottie-player>
+    </div>
+    <p class="m-0">Sent.</p>
+  </div>
+</div>
+        </section>
+      </main>
+
+
+      <!-- footer -->
+       <footer class="footer base">
+        <div class="footer-inner">
+          <a href="index.html" class="footer-logo">
+              <img
+                src="images/footer-logo-2.png"
+                alt="Island Game Studio Logo"
+                class="footer-logo"
+          /></a>
+          <div class="footer-contact">
+            Island Game Studio is a small-scale indie games studio passionate about crafting games that ignite joy.
+          </div>
+          <div class="footer-social-links">
+            <a href="#">
+              <img src="images/Steam_icon_logo.png" alt="Steam Icon">
+            </a>
+          </div>
+          <div class="footer-nav">
+                      <a href="about.html">About</a>
+            <a href="press.html">Press</a>
+            <a href="creators.html">Content Creators</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const langToggle = document.querySelector('.lang-toggle');
+      const langMenu = document.querySelector('.lang-menu');
+
+      if (langToggle && langMenu) {
+        const currentLang = langToggle.dataset.lang;
+
+        // hide current language from dropdown
+        langMenu.querySelectorAll('a[data-lang]').forEach(a => {
+          if (a.dataset.lang === currentLang) {
+            a.parentElement.style.display = 'none';
+          }
+        });
+
+        langToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          langMenu.classList.toggle('is-open');
+        });
+
+        document.addEventListener('click', function () {
+          langMenu.classList.remove('is-open');
+        });
+      }
+        const _ = e=>document.querySelector(e), __ =e=>document.querySelectorAll(e);
+        _('.menu-toggler').addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+    </script>
+
+
+    <!-- <script>
+
+      const form = document.getElementById("contactForm");
+
+function encode(data) {
+  return Object.keys(data)
+    .map(
+      (key) =>
+        encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+    )
+    .join("&");
+}
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const data = {};
+
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode(data),
+  })
+    .then(() => {
+      alert("✅ Message sent successfully!");
+      form.reset();
+    })
+    .catch((error) => {
+      alert("❌ Error sending message");
+      console.error(error);
+    });
+});
+    </script> -->
+   
+
+
+
+<script>
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) =>
+          encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  }
+
+  function wireAjaxForm(formId, submitBtnId, successStateId, errorId, sendingText, defaultText) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    const submitBtn = document.getElementById(submitBtnId);
+    const btnText = submitBtn ? submitBtn.querySelector(".btn-text") : null;
+    const successState = document.getElementById(successStateId);
+    const formError = document.getElementById(errorId);
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      if (formError) {
+        formError.textContent = "";
+        formError.classList.remove("is-visible");
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnText) btnText.textContent = sendingText || "Sending...";
+
+      try {
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        const formName = form.getAttribute("name");
+        if (formName && !data["form-name"]) {
+          data["form-name"] = formName;
+        }
+
+        await fetch(form.getAttribute("action") || "/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode(data),
+        });
+
+        form.reset();
+        form.classList.add("is-hidden");
+        if (successState) successState.classList.add("is-visible");
+        // ✅ PLAY LOTTIE AFTER SUCCESS
+const anim = successState.querySelector("dotlottie-player");
+
+requestAnimationFrame(() => {
+  if (anim) {
+    anim.stop();
+    anim.seek(0);
+    anim.play();
+  }
+});
+      } catch (error) {
+        console.error(error);
+
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnText) btnText.textContent = defaultText || "Send Message";
+
+        if (formError) {
+          formError.textContent = "Something went wrong. Please try again.";
+          formError.classList.add("is-visible");
+        }
+      }
+    });
+  }
+
+  wireAjaxForm("contactForm", "submitBtn", "successState", "formError", "Sending...", "Send Message");
+  wireAjaxForm("signup-form", "signupSubmitBtn", "signupSuccessState", "signupFormError", "Sending...", "Sign up");
+</script>
+  </body>
+</html>

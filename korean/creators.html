@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>콘텐츠 크리에이터 - 아일랜드 게임 스튜디오</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="creators-page">
+    <div class="page-wrap">
+      <header>
+        <div class="container">
+          <nav class="nav home">
+            <div class="nav-top">
+              <div class="nav-left">
+                <a href="index.html">
+                  <img src="images/Logo.png" alt="아일랜드 게임 스튜디오 로고" class="logo-image" />
+                </a>
+              </div>
+
+              <button type="button" class="menu-toggler">
+                <span></span><span></span>
+              </button>
+            </div>
+
+            <div class="nav-center">
+              <div class="nav-links">
+                <a href="about.html">회사 소개</a>
+                <a href="press.html">언론</a>
+                <a href="creators.html">콘텐츠 크리에이터</a>
+                <a href="contact.html">문의</a>
+              </div>
+            </div>
+
+            <div class="nav-right">
+              <button class="lang-toggle" type="button" data-lang="ko">
+                <img src="images/Flag_Korea.svg" alt="한국 국기" class="lang-flag-img" />
+                <span class="lang-code">Korean</span>
+                <span class="lang-caret">▾</span>
+              </button>
+
+        <ul class="lang-menu">
+  <li>
+    <a href="/english/creators.html" data-lang="en">
+      <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+      English
+    </a>
+  </li>
+  <li>
+    <a href="/chinese/creators.html" data-lang="zh">
+      <img src="images/Flag_China.png" alt="Chinese Flag" class="lang-flag-img" />
+      中文
+    </a>
+  </li>
+  <li>
+    <a href="/japanese/creators.html" data-lang="ja">
+      <img src="images/Flag_Japan.png" alt="Japanese Flag" class="lang-flag-img" />
+      日本語
+    </a>
+  </li>
+  <li>
+    <a href="/korean/creators.html" data-lang="ko">
+      <img src="images/Flag_Korea.svg" alt="South Korean Flag" class="lang-flag-img" />
+      한국어
+    </a>
+  </li>
+</ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="subpage-main">
+        <section class="creator-hub">
+          <div class="hub-intro">
+            <h1>크리에이터 허브</h1>
+            <p>
+              각 게임의 프레스 키트, 트레일러, 시각 자료로 바로 이동할 수 있는 링크입니다.
+              보도, 미리보기, 소개 글 작성에 활용해 주세요.
+            </p>
+          </div>
+
+          <div class="game-link-list">
+            <div class="game-link-row">
+              <div class="game-link-title">Dark Dive</div>
+              <div class="game-link-actions">
+                <a class="hub-pill" href="#">프레스 키트</a>
+                <a class="hub-pill" href="#">트레일러</a>
+                <a class="hub-pill" href="#">시각 자료</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer base">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo">
+          <img
+            src="images/footer-logo-2.png"
+            alt="아일랜드 게임 스튜디오 로고"
+            class="footer-logo"
+          />
+        </a>
+        <div class="footer-contact">
+          아일랜드 게임 스튜디오는 즐거움을 전하는 게임을 만드는 데 열정을 가진 소규모 인디 게임 스튜디오입니다.
+        </div>
+        <div class="footer-social-links">
+          <a href="#">
+            <img src="images/Steam_icon_logo.png" alt="Steam 아이콘">
+          </a>
+        </div>
+        <div class="footer-nav">
+          <a href="about.html">회사 소개</a>
+          <a href="press.html">언론</a>
+          <a href="creators.html">콘텐츠 크리에이터</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const langToggle = document.querySelector('.lang-toggle');
+      const langMenu = document.querySelector('.lang-menu');
+
+      if (langToggle && langMenu) {
+        const currentLang = langToggle.dataset.lang;
+
+        langMenu.querySelectorAll('a[data-lang]').forEach(a => {
+          if (a.dataset.lang === currentLang) {
+            a.parentElement.style.display = 'none';
+          }
+        });
+
+        langToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          langMenu.classList.toggle('is-open');
+        });
+
+        document.addEventListener('click', function () {
+          langMenu.classList.remove('is-open');
+        });
+      }
+
+      const _ = e => document.querySelector(e), __ = e => document.querySelectorAll(e);
+      _('.menu-toggler').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+    </script>
+  </body>
+</html>

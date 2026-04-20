@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Press - Island Game Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header>
+        <nav class="nav">
+          <div class="nav-left">
+            <a href="index.html">
+              <img src="images/Logo.png" alt="Island Game Studio Logo" class="logo-image" />
+            </a>
+          </div>
+      
+          <div class="nav-center">
+            <div class="nav-links">
+              <a href="about.html">About</a>
+              <a href="press.html">Press</a>
+              <a href="creators.html">Creators</a>
+              <a href="contact.html">Contact</a>
+            </div>
+      
+            <!-- Language selector -->
+            <div class="nav-right">
+              <!-- Toggle button -->
+              <button class="lang-toggle" type="button" data-lang="en">
+                <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+                <span class="lang-code">EN</span>
+                <span class="lang-caret">▾</span>
+              </button>
+      
+              <!-- Dropdown menu -->
+              <ul class="lang-menu">
+                <li>
+                  <a href="/english/index.html" data-lang="en">
+                    <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+                    English
+                  </a>
+                </li>
+                <li>
+                  <a href="/chinese/index.html" data-lang="zh">
+                    <img src="images/Flag_China.png" alt="Chinese Flag" class="lang-flag-img" />
+                    Chinese
+                  </a>
+                </li>
+                <li>
+                  <a href="/japanese/index.html" data-lang="ja">
+                    <img src="images/Flag_Japan.png" alt="Japanese Flag" class="lang-flag-img" />
+                    Japanese
+                  </a>
+                </li>
+                <li>
+                  <a href="/korean/index.html" data-lang="ko">
+                    <img src="images/Flag_Korea.svg" alt="South Korean Flag" class="lang-flag-img" />
+                    Korean
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main class="subpage-main">
+        <div class="press-copy">
+          <h1>Press Hub</h1>
+          <p>
+            Details about our studio, specific game assets and game information
+            can be accessed below in the Studio Info Hub. For all press inquires for keys
+            or interview requests, please use the contact form on this page.
+            We respond quickly and are happy to provide additional information on our games
+            or our studio.
+          </p>
+        </div>
+
+        <!-- FORM (keep as-is for Netlify + animation) -->
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+          class="press-contact-form">
+          <input type="hidden" name="form-name" value="contact">
+
+          <p style="display:none;">
+            <label>Empty Field:
+              <input name="bot-field">
+            </label>
+          </p>
+
+          <p class="field">
+            <label for="press-name">Name</label>
+            <input id="press-name" type="text" name="name" required>
+          </p>
+
+          <p class="field">
+            <label for="press-email">Email</label>
+            <input id="press-email" type="email" name="email" required>
+          </p>
+
+          <p class="field">
+            <label for="press-message">Message</label>
+            <textarea id="press-message" name="message" required></textarea>
+          </p>
+
+          <p>
+            <button type="submit" id="contact-submit" class="btn-primary-pill">
+              Send message
+            </button>
+          </p>
+        </form>
+
+        <!-- Success message -->
+        <div id="contact-success" class="hidden">
+          <div class="checkmark-circle">
+            <img src="images/checkmark.svg" alt="Success">
+          </div>
+          <p>Message sent. Thank you!</p>
+        </div>
+
+        <!-- ORANGE BUBBLE -->
+        <section class="press-hub">
+          <div class="hub-intro">
+            <h1>Studio Info Hub</h1>
+            <p>
+              Quick links to press kits, trailers, and MIX or festival pages for
+              each of our games. Use these for coverage, previews, and
+              write-ups.
+            </p>
+          </div>
+
+          <div class="game-link-list">
+            <!-- Game 1 -->
+            <div class="game-link-row">
+              <div class="game-link-title">Dark Dive</div>
+              <div class="game-link-actions">
+                <a class="hub-pill" href="#">Press kit</a>
+                <a class="hub-pill" href="#">Steam page</a>
+              </div>
+            </div>
+
+            <!-- Studio -->
+            <div class="game-link-row">
+              <div class="game-link-title">Island Game Studio</div>
+              <div class="game-link-actions">
+                <a class="hub-pill" href="#">Information kit</a>
+                <a class="hub-pill" href="#">Developer Page</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <footer id="contact">
+        <div class="footer-inner">
+          <a href="index.html">
+              <img
+                src="images/Logo.png"
+                alt="Island Game Studio Logo"
+                class="footer-logo"
+          />
+          <div class="footer-contact">
+            Media &amp; general: hello@islandgames.studio · Press kit and assets
+            available on the Press page.
+          </div>
+
+          <div class="footer-social">
+            <a href="#">Steam</a>
+            <span>·</span>
+            <a href="#">YouTube</a>
+            <span>·</span>
+            <a href="#">Discord</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const langToggle = document.querySelector('.lang-toggle');
+      const langMenu = document.querySelector('.lang-menu');
+
+      if (langToggle && langMenu) {
+        const currentLang = langToggle.dataset.lang;
+
+        // hide current language from dropdown
+        langMenu.querySelectorAll('a[data-lang]').forEach(a => {
+          if (a.dataset.lang === currentLang) {
+            a.parentElement.style.display = 'none';
+          }
+        });
+
+        langToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          langMenu.classList.toggle('is-open');
+        });
+
+        document.addEventListener('click', function () {
+          langMenu.classList.remove('is-open');
+        });
+      }
+    </script>
+    <script>
+      const form = document.getElementById('contact-form');
+      const successBox = document.getElementById('contact-success');
+      const submitBtn = document.getElementById('contact-submit');
+
+      function encode(data) {
+        return Object.keys(data)
+          .map(
+            key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+          )
+          .join('&');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Visual "sending" state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+          // Netlify expects repeated keys for arrays; this keeps it simple
+          if (data[key]) {
+            data[key] += ', ' + value;
+          } else {
+            data[key] = value;
+          }
+        });
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({
+            'form-name': form.getAttribute('name'),
+            ...data
+          })
+        })
+          .then(response => {
+            if (!response.ok) throw new Error('Network error');
+            // Hide form, show success
+            form.classList.add('fade-out');
+            setTimeout(() => {
+              form.style.display = 'none';
+              successBox.classList.remove('hidden');
+              successBox.classList.add('show');
+            }, 300); // match CSS transition
+          })
+          .catch(error => {
+            console.error(error);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send';
+            alert('Something went wrong. Please try again.');
+          });
+      });
+    </script>
+  </body>
+</html>

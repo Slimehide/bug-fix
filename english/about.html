@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Island Game Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="page-wrap">
+    <header>
+    <div class="container">
+     <nav class="nav home">
+  <div class="nav-top">
+    <div class="nav-left">
+      <a href="index.html">
+        <img src="images/Logo.png" alt="Island Game Studio Logo" class="logo-image" />
+      </a>
+    </div>
+
+   
+
+    <button type="button" class="menu-toggler">
+      <span></span><span></span>
+    </button>
+    
+  </div>
+
+  <div class="nav-center">
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="press.html">Press</a>
+      <a href="creators.html">Content Creators</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  
+
+       <div class="nav-right">
+      <button class="lang-toggle" type="button" data-lang="en">
+        <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+        <span class="lang-code">EN</span>
+        <span class="lang-caret">▾</span>
+      </button>
+
+     <ul class="lang-menu">
+  <li>
+    <a href="/english/about.html" data-lang="en">
+      <img src="images/Flag_USA.png" alt="USA Flag" class="lang-flag-img" />
+      English
+    </a>
+  </li>
+  <li>
+    <a href="/chinese/about.html" data-lang="zh">
+      <img src="images/Flag_China.png" alt="Chinese Flag" class="lang-flag-img" />
+      中文
+    </a>
+  </li>
+  <li>
+    <a href="/japanese/about.html" data-lang="ja">
+      <img src="images/Flag_Japan.png" alt="Japanese Flag" class="lang-flag-img" />
+      日本語
+    </a>
+  </li>
+  <li>
+    <a href="/korean/about.html" data-lang="ko">
+      <img src="images/Flag_Korea.svg" alt="South Korean Flag" class="lang-flag-img" />
+      한국어
+    </a>
+  </li>
+</ul>
+    </div>
+    </div>
+    </nav>
+  </header>
+    <main class="subpage-main about">
+      <section class="panel">
+       <div class="about-section">
+
+  <!-- Row 1 -->
+  <div class="about-row">
+    <div class="about-text">
+      <h1>About Island Game Studio</h1>
+      <p>
+        Island Game Studio is video game studio that creates PC & console games. 
+        We make games that are fun to play, visually distinct and built to be played again and again.
+      </p>
+    </div>
+    <div class="about-image about-photo"></div>
+  </div>
+
+  <!-- Row 2 (reverse) -->
+  <div class="about-row reverse">
+    <div class="about-image lam-photo"></div>
+    <div class="about-text">
+      <p>
+        For us, games are a way to invite others into the worlds we create. 
+        Giving everyone a chance to discover something new and exciting. 
+        It’s a lot like reggae, once you find the rhythm, you follow it.
+      </p>
+    </div>
+  </div>
+
+</div>
+      </section>
+    </main>
+
+        <!-- FOOTER -->
+      <footer class="footer base">
+        <div class="footer-inner">
+          <a href="index.html" class="footer-logo">
+              <img
+                src="images/footer-logo-2.png"
+                alt="Island Game Studio Logo"
+                class="footer-logo"
+          /></a>
+          <div class="footer-contact">
+            Island Game Studio is a small-scale indie games studio passionate about crafting games that ignite joy.
+          </div>
+          <div class="footer-social-links">
+            <a href="#">
+              <img src="images/Steam_icon_logo.png" alt="Steam Icon">
+            </a>
+          </div>
+          <div class="footer-nav">
+                      <a href="about.html">About</a>
+            <a href="press.html">Press</a>
+            <a href="creators.html">Content Creators</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </footer>
+  </div>
+  <script>
+    const langToggle = document.querySelector('.lang-toggle');
+    const langMenu = document.querySelector('.lang-menu');
+
+    if (langToggle && langMenu) {
+      const currentLang = langToggle.dataset.lang;
+
+      // hide current language from dropdown
+      langMenu.querySelectorAll('a[data-lang]').forEach(a => {
+        if (a.dataset.lang === currentLang) {
+          a.parentElement.style.display = 'none';
+        }
+      });
+
+      langToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        langMenu.classList.toggle('is-open');
+      });
+
+      document.addEventListener('click', function () {
+        langMenu.classList.remove('is-open');
+      });
+    }
+      const _ = e=>document.querySelector(e), __ =e=>document.querySelectorAll(e);
+        _('.menu-toggler').addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+  </script>
+</body>
+</html>
