@@ -576,6 +576,10 @@ header {
   width: 300%;
   height: auto;
   animation: waveMove 15s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .waves-container .wave-img.is-back {
   position: absolute;
@@ -700,10 +704,10 @@ header {
 
 @keyframes waveMove {
   0% {
-    transform: translateX(-53.33%);
+    transform: translate3d(-53.33%, 0, 0);
   }
   100% {
-    transform: translateX(-20%);
+    transform: translate3d(-20%, 0, 0);
   }
 }
 @keyframes treeMove {
@@ -1951,6 +1955,13 @@ body.menu-open .nav-links {
   }
   .waves-container .wave-img {
     width: 410%;
+  }
+  /* Mobile browsers (esp. iOS Safari) re-rasterize heavy blur() layers on
+     scroll / viewport changes and briefly paint the raw unblurred shape,
+     which appears as a white square flash above the waves. Disable the
+     blurred white glow on mobile to prevent it. */
+  .section_home-hero::after {
+    display: none;
   }
     .home-hero_trees-container .tree-img_wrap.is-3 {
         bottom: -100px;
