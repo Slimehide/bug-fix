@@ -566,10 +566,14 @@ header {
   position: relative;
   z-index: 0;
   max-width: 100%;
+  isolation: isolate;
+  contain: paint;
 }
 .waves-container.is-inverted {
-  transform: rotate(180deg);
-  background-color: #fff !important;
+  transform: rotate(180deg) translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .waves-container .wave-img {
   display: block;
